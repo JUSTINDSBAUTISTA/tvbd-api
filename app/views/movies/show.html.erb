@@ -1,0 +1,13 @@
+<!-- app/views/movies/show.html.erb -->
+<h1><%= @movie['name'] %></h1>
+
+<div class="movie-detail">
+  <%= image_tag @movie['image'], alt: @movie['name'], class: 'movie-detail-image' %>
+  <p><strong>Year:</strong> <%= @movie['year'] %></p>
+  <p><strong>Runtime:</strong> <%= @movie['runtime'] %> minutes</p>
+  <p><strong>Score:</strong> <%= @movie['score'] %></p>
+  <p><strong>Status:</strong> <%= @movie['status_name'] %></p>
+  <p><strong>Overview:</strong> <%= @movie['overview'] %></p>
+</div>
+
+<%= link_to 'Back to Movies', movies_path, class: 'back-link' %>

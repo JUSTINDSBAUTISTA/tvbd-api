@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  slug: MyString
+  image: MyString
+  name_translations: MyText
+  overview_translations: MyText
+  aliases: MyText
+  score: 1
+  runtime: 1
+  status_id: 1
+  status_name: MyString
+  status_record_type: MyString
+  status_keep_updated: false
+  last_updated: 2024-09-11 23:00:54
+  year: MyString
+
+two:
+  name: MyString
+  slug: MyString
+  image: MyString
+  name_translations: MyText
+  overview_translations: MyText
+  aliases: MyText
+  score: 1
+  runtime: 1
+  status_id: 1
+  status_name: MyString
+  status_record_type: MyString
+  status_keep_updated: false
+  last_updated: 2024-09-11 23:00:54
+  year: MyString

@@ -1,0 +1,26 @@
+<!-- app/views/movies/index.html.erb -->
+<div class="container">
+    <h1 style="text-align: center"> <%= @movies.count %> Movies</h1>
+
+    <%= form_with url: movies_path, method: :get, local: true, class: 'search-form' do %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search for movies...', class: 'search-input' %>
+    <%= submit_tag 'Search', class: 'search-button' %>
+    <% end %>
+
+    <div class="movie-cards">
+    <% if @movies.present? %>
+        <% @movies.each do |movie| %>
+        <div class="movie-card">
+            <%= link_to movie_path(movie['id']) do %>
+            <%= image_tag movie['image'].present? ? movie['image'] : '/images/image.png', alt: movie['name'], class: 'movie-image' %>
+            <h2 class="movie-title"><%= movie['name'] %></h2>
+            <p class="movie-year"><%= movie['year'] %></p>
+            <p class="movie-overview"><%= truncate(movie['overview'] || 'No overview available', length: 100) %></p>
+            <% end %>
+        </div>
+        <% end %>
+    <% else %>
+        <p>No movies found.</p>
+    <% end %>
+    </div>
+</div>
