@@ -12,7 +12,8 @@
         <% @movies.each do |movie| %>
         <div class="movie-card">
             <%= link_to movie_path(movie['id']) do %>
-            <%= image_tag movie['image'].present? ? movie['image'] : '/images/image.png', alt: movie['name'], class: 'movie-image' %>
+            <img src="https://artworks.thetvdb.com<%= movie['image'].present? ? movie['image'] : '/images/image.png' %>" alt="<%= movie['name'] %>" class="movie-image">
+
             <h2 class="movie-title"><%= movie['name'] %></h2>
             <p class="movie-year"><%= movie['year'] %></p>
             <p class="movie-overview"><%= truncate(movie['overview'] || 'No overview available', length: 100) %></p>

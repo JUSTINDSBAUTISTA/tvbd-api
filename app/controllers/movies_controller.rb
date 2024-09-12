@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
   # GET /movies/:id
   def show
     response = HTTParty.get("#{API_BASE_URL}/#{params[:id]}", headers: API_AUTH_HEADER)
-    @movie = response.parsed_response
+    @movie = response.parsed_response["data"]
   end
 
   # POST /movies
